@@ -1,0 +1,14 @@
+﻿﻿@using System.Security.Claims
+
+<h1>Bienvenido a tu perfil,  @Context.User.FindFirst("USERNAME").Value</h1>
+<div class="d-flex mt-5">
+    <img src="~/images/@Context.User.FindFirst("FOTO").Value" style="width:300px; margin-right:50px;"/>
+    <div>
+        <h5>Nombre completo:</h5>
+        <p> @Context.User.FindFirst("USERNAME").Value
+            @Context.User.FindFirst("APELLIDOS").Value
+        </p>
+        <h5>Email:</h5>
+        <hp> @Context.User.Identity.Name</hp>
+    </div>
+</div>

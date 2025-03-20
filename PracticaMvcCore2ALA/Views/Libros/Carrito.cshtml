@@ -1,0 +1,18 @@
+﻿@model List<Libro>
+
+    <h1>Carrito de la compra</h1>
+@if(Model != null){
+    <a asp-controller="Libros" asp-action="ConfirmarPedido" class="btn btn-success fw-bold fs-5 p-2">Confirmar Pedido</a>
+    <div class="d-flex flex-wrap">
+        @foreach (Libro libro in Model)
+        {
+            <div class="card" style="width:350px;">
+                <div class="card-title">@libro.Titulo</div>
+                <div class="card-body">    <img src="~/images/@libro.Portada" style="width:300px;" /></div>
+                <div> <a asp-action="QuitarCarrito" asp-route-IdLibro="@libro.Id">Quitar de la lista</a></div>
+            </div>
+        }
+    </div>
+}else{
+    <h3>Todavía no has añadido ningún libro a tu carrito.</h3>
+}

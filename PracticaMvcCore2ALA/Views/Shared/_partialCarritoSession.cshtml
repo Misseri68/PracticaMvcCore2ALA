@@ -1,0 +1,10 @@
+﻿@{
+    int numLibros;
+    if (Context.Session.GetObject<List<Libro>>("CARRITO") != null){
+        numLibros = Context.Session.GetObject<List<Libro>>("CARRITO").Count();
+    }else{
+        numLibros = 0;
+    }
+}
+
+<text>(@numLibros)</text>

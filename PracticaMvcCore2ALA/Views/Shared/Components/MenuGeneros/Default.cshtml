@@ -1,0 +1,17 @@
+﻿@model List<Genero>
+
+
+
+<ul class="navbar-nav">
+    <li class="nav-item dropdown">
+        <button class="btn" data-bs-toggle="dropdown" aria-expanded="false">Géneros</button>
+        <ul class="dropdown-menu">
+            @foreach (Genero g in Model) { 
+                <li>
+                    <a class="dropdown-item" asp-controller="Libros" asp-action="Index" asp-route-IdGenero="@g.Id">@g.Nombre</a>
+                </li>
+            }
+        </ul>
+        </li>
+    </ul>
+

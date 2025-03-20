@@ -1,0 +1,21 @@
+﻿@model Libro
+
+<h2>@Model.Titulo</h2>
+
+
+
+<div class="d-flex w-100">
+    <img src="~/images/@Model.Portada" style="width:450px; padding-bottom:20px; margin-right:50px;" />
+    <div style="max-width:600px;">
+        <h3>Descripción:</h3>
+        <p class="fs-4" >Resumen: @Model.Resumen</p>
+        <h4>Editorial: @Model.Editorial</h4>
+        <h4>Autor: @Model.Autor</h4>
+    </div>
+   
+
+</div>
+<div class="d-flex">
+    <h1>@Model.Precio €</h1>
+    <button class="btn btn-success">Añadir a carrito</button>
+</div>
